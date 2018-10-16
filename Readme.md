@@ -5,7 +5,7 @@ It's a simple console application with the goal to address principles of OOP.
 
 ## Classes diagram
 
-![image](https://raw.githubusercontent.com/al1s/Zoo/master/class diagram.png)
+![image](https://raw.githubusercontent.com/al1s/Zoo/master/class%20diagram.png)
 
 ## Requirements 
 Using all 4 of the Object Oriented Principles (OOPs): 

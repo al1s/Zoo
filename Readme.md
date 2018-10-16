@@ -5,7 +5,7 @@ It's a simple console application with the goal to address principles of OOP.
 
 ## Classes diagram
 
-![image](https://raw.githubusercontent.com/al1s/Zoo/master/class-diagram.png)
+![image](https://raw.githubusercontent.com/al1s/Zoo/master/class diagram.png)
 
 ## Requirements 
 Using all 4 of the Object Oriented Principles (OOPs): 
@@ -13,7 +13,7 @@ Using all 4 of the Object Oriented Principles (OOPs):
 - Build out the hierarchical class structure of a zoo within Visual Studio and a digital diagram. 
 - There should be at least 3 layers of inheritance with at least 6 different types of animals.
 - Prove that the OOP principles are being used by returning strings as necessary to prove that a methods were property implemented or inherited.
-  - Examples include: Eat() Sleep() Sound() etc…
+  - Examples include: Eat() Sleep() Sound() etcâ€¦
   - Other non-listed methods.
 
 ## Getting started

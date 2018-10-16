@@ -7,6 +7,8 @@ namespace Lab05_OOP_Zoo.Classes
     public class Lion : Carnivore
     {
         public override int ScarcityLevel { get; set; } = 9;
+        public override int FrightLevel { get; set; }
+
         public override string Eat(Animal food)
         {
             if (food is Monkey)
@@ -26,6 +28,12 @@ namespace Lab05_OOP_Zoo.Classes
             double monkeyVar = 1.7;
             return (int)Math.Round(avgSpeed * time * monkeyVar);
         }
+
+        public override void SeenSomethingScary()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string Sound()
         {
             return "Rooar!";

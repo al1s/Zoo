@@ -6,6 +6,8 @@ namespace Lab05_OOP_Zoo.Classes
     {
         public override int ScarcityLevel { get; set; } = 8;
         public override bool CanJump { get => base.CanJump; set => base.CanJump = false; }
+        public override int FrightLevel { get; set; } = 8;
+
         public override string Eat(Animal food)
         {
             if (food is Turtle)
@@ -25,6 +27,12 @@ namespace Lab05_OOP_Zoo.Classes
             Console.WriteLine("I'm average");
             return avgSpeed * time;
         }
+
+        public override void SeenSomethingScary()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string Sound()
         {
             return "Hsssss!";

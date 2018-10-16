@@ -7,6 +7,8 @@ namespace Lab05_OOP_Zoo.Classes
     {
         public override int ScarcityLevel { get; set; } = 1;
         public override bool CanJump { get => base.CanJump; set => base.CanJump = false; }
+        public override int FrightLevel { get; set; } = 7;
+
         public override string Eat(Plant food)
         {
             if (food is Bamboo)
@@ -25,6 +27,11 @@ namespace Lab05_OOP_Zoo.Classes
             Console.WriteLine("I'm the slowest!");
             double turtleVar = 0.1;
             return (int)Math.Round(speed * time * turtleVar);
+        }
+
+        public override void SeenSomethingScary()
+        {
+            throw new NotImplementedException();
         }
 
         public override string Sound()

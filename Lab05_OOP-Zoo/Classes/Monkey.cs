@@ -39,7 +39,7 @@ namespace Lab05_OOP_Zoo.Classes
         /// <returns>string</returns>
         public override string Sound()
         {
-            return "Meow";
+            return "Meow...";
         }
     }
 }

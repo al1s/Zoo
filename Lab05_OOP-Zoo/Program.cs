@@ -20,8 +20,16 @@ namespace Lab05_OOP_Zoo
             animals[4] = snake;
 
             FeedAnimals(animals);
-            //Stroll(animals);
+            Yell(animals);
             Console.ReadLine();
+        }
+        public static void Yell(Animal[] animals)
+        {
+            foreach (Animal animal in animals)
+            {
+                animal.NameYourself();
+                Console.WriteLine(animal.Sound());
+            }
         }
         public static void FeedAnimals(Animal[] animals)
         {

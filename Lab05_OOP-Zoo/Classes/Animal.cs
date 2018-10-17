@@ -3,7 +3,7 @@ using Lab05_OOP_Zoo.Interfaces;
 
 namespace Lab05_OOP_Zoo.Classes
 {
-    abstract public class Animal : Eatable, IScary
+    abstract public class Animal : Eatable, IScary, ICanBeScared
     {
         /// <summary>
         /// How scary the animal is
@@ -28,6 +28,8 @@ namespace Lab05_OOP_Zoo.Classes
         /// Whether the animal can jump
         /// </summary>
         public virtual bool CanJump { get; set; } = true;
+        abstract public int FrightLevel { get; set; }
+
         /// <summary>
         /// Make a sound
         /// </summary>
@@ -61,5 +63,6 @@ namespace Lab05_OOP_Zoo.Classes
             return avgSpeed * time;
         }
 
+        abstract public void SeenSomethingScary();
     }
 }

@@ -1,11 +1,13 @@
 using System;
-
+using Lab05_OOP_Zoo.Interfaces;
 
 namespace Lab05_OOP_Zoo.Classes
 {
-    public class Monkey : Herbivore
+    public class Monkey : Herbivore, ICanBeScared
     {
         public override int ScarcityLevel { get; set; } = 1;
+        public override int FrightLevel { get; set; } = 1;
+
         public override string Eat(Plant food)
         {
             if (food is Banana)
@@ -26,6 +28,12 @@ namespace Lab05_OOP_Zoo.Classes
             double monkeyVar = 1.3;
             return (int)Math.Round(avgSpeed * time * monkeyVar); 
         }
+
+        public override void SeenSomethingScary()
+        {
+            Console.Write("Uh-Uh-Uh-Uh-uh-uh-uh!");
+        }
+
         public override string Sound()
         {
             return "Meow...";

@@ -1,5 +1,6 @@
 ﻿using System;
 using Lab05_OOP_Zoo.Classes;
+using Lab05_OOP_Zoo.Interfaces;
 
 namespace Lab05_OOP_Zoo
 {
@@ -116,6 +117,7 @@ namespace Lab05_OOP_Zoo
                 foreach(Animal food in meatFoodBank)
                 {
                     animal.NameYourself();
+                    if (food.FrightLevel < 2) animal.Scare(food);
                     animal.Eat(food);
                 }
             }

@@ -9,6 +9,8 @@ namespace Lab05_OOP_Zoo.Classes
     public class Elephant : Herbivore
     {
         public override int ScarcityLevel { get; set; } = 6;
+        public override int FrightLevel { get; set; } = 8;
+
         public override string Eat(Plant food) {
             if (food is Bamboo)
             {
@@ -27,6 +29,12 @@ namespace Lab05_OOP_Zoo.Classes
             double elephantVar = 0.7;
             return (int) Math.Round(speed * time * elephantVar);
         }
+
+        public override void SeenSomethingScary()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string Sound()
         {
             return "Pawoo!";

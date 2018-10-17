@@ -41,4 +41,4 @@ The program (should) contain the following
 - Abstraction - expose only what is necessary to communicate with the object; `Eat()` is responsible for allowing to be eat eaten what supposed to be by an animals - turtles doesn't eat elephants.
 - Inheritance - define the common behavior or state on the highest available level of abstraction, don't repeat yourself in concrete objects implementations. Abstract `Eatable` class combines every object that could be eaten by other animals.
 - Polymorphism - group objects by upper class and invoke required behavior for every member of such group; The app groups all zoo animals into one group to feed them. 
-
+- Interfaces - define a contract for objects to communicate with each other. `IScare` and `ICanBeScared` are defined in the app. First allows animals to scare visitors. Second defines the ability of the visitors to be scared.

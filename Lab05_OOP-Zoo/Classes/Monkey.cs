@@ -8,6 +8,7 @@ namespace Lab05_OOP_Zoo.Classes
     /// </summary>
     public class Monkey : Herbivore
     {
+        public override int ScarcityLevel { get; set; } = 1;
         /// <summary>
         /// 
         /// </summary>

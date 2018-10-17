@@ -1,5 +1,5 @@
 using System;
-
+using Lab05_OOP_Zoo.Interfaces;
 
 namespace Lab05_OOP_Zoo.Classes
 {
@@ -8,7 +8,7 @@ namespace Lab05_OOP_Zoo.Classes
     /// </summary>
     public class Elephant : Herbivore
     {
-
+        public override int ScarcityLevel { get; set; } = 6;
         public override string Eat(Plant food) {
             if (food is Bamboo)
             {

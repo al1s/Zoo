@@ -11,6 +11,7 @@ namespace Lab05_OOP_Zoo.Classes
     /// </summary>
     public class Turtle : Herbivore
     {
+        public override int ScarcityLevel { get; set; } = 1;
         /// <summary>
         /// 
         /// </summary>

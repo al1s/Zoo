@@ -19,9 +19,27 @@ namespace Lab05_OOP_Zoo
             animals[3] = lion;
             animals[4] = snake;
 
+            Visitor[] visitors = new Visitor[3];
+            Adult adultBrave = new Adult() { Name = "Adult, brave one" };
+            Adult adultNotSoBrave = new Adult() { FrightLevel = 7, Name = "Adult but not so brave" };
+            Child child = new Child() { Name = "Child" };
+
+            visitors[0] = adultBrave;
+            visitors[1] = adultNotSoBrave;
+            visitors[2] = child;
+
             FeedAnimals(animals);
             Yell(animals);
+            ScareAll(animals, visitors);
             Console.ReadLine();
+        }
+        public static void ScareAll(Animal[] animals, Visitor[] visitors)
+        {
+            Random rnd = new Random();
+            foreach (Animal animal in animals)
+            {
+                animal.Scare(visitors[rnd.Next(0, 3)]);
+            }
         }
         public static void Yell(Animal[] animals)
         {

@@ -1,71 +1,79 @@
 using System;
 using Xunit;
+using System.Collections.Generic;
 using Lab05_OOP_Zoo.Classes;
+using Lab05_OOP_Zoo;
+using Lab05_OOP_Zoo.Interfaces;
 
 namespace Lab05_OOP_ZooTests
 {
     public class UnitTest1
     {
-        [Fact]
-        public void MonkeyCanMove()
+        public static IEnumerable<object[]> AnimalsWithMultipliers => new List<object[]>
+            {
+                new object[] { new Elephant(), 0.7 },
+                new object[] { new Turtle(), 0.1 },
+                new object[] { new Monkey(), 1.3 },
+                new object[] { new Lion(), 1.7 },
+                new object[] { new Snake(), 1 },
+            };
+
+        public static IEnumerable<object[]> AnimalsWithSounds => new List<object[]>
+            {
+                new object[] { new Elephant(), "Pawoo!" },
+                new object[] { new Turtle(), string.Empty },
+                new object[] { new Monkey(), "Meow..." },
+                new object[] { new Lion(), "Rooar!" },
+                new object[] { new Snake(), "Hsssss!" },
+            };
+
+        public static IEnumerable<object[]> Animals => new List<object[]>
+            {
+                new object[] { new Elephant() },
+                new object[] { new Turtle() },
+                new object[] { new Monkey() },
+                new object[] { new Lion() },
+                new object[] { new Snake() },
+            };
+
+        [Theory]
+        [MemberData(nameof(AnimalsWithMultipliers))]
+        public void AnimalCanMove(Animal animal, double animalSpeedMultiplier)
         {
-            Monkey monkey = new Monkey();
-            Assert.Equal((int)Math.Round(1*1*1.3), monkey.Move(1, 1));
+            Assert.Equal((int)Math.Round(1 * 1 * animalSpeedMultiplier), animal.Move(1, 1));
         }
-        [Fact]
-        public void LionCanMove()
+
+
+        [Theory]
+        [MemberData(nameof(Animals))]
+        public void AnimalImpelementsIScary(Animal animal)
         {
-            Lion lion = new Lion();
-            Assert.Equal((int)Math.Round(1*1*1.7), lion.Move(1, 1));
+            Assert.True(animal is IScary);
         }
-        [Fact]
-        public void TurtleCanMove()
+
+        [Theory]
+        [MemberData(nameof(Animals))]
+        public void AnimalCanSleep(Animal animal)
         {
-            Turtle turtle = new Turtle();
-            Assert.Equal((int)Math.Round(1*1*0.1), turtle.Move(1, 1));
+            Assert.Equal("Zzz...", animal.Sleep("", 1));
         }
-        [Fact]
-        public void SnakeCanMove()
+
+        [Theory]
+        [MemberData(nameof(AnimalsWithSounds))]
+        public void AnimalInheritSound(Animal animal, string sound)
         {
-            Snake snake = new Snake();
-            Assert.Equal(1, snake.Move(1, 1));
-        }
-        [Fact]
-        public void ElephantCanMove()
-        {
-            Elephant elephant= new Elephant();
-            Assert.Equal((int)Math.Round(1*1*0.7), elephant.Move(1, 1));
+            Assert.Equal(sound, animal.Sound());
         }
 
         [Fact]
-        public void MonkeyCanSleep()
+        public void AdultImplementICanBeScared()
         {
-            Monkey monkey = new Monkey();
-            Assert.Equal("Zzz...", monkey.Sleep("", 1));
+            Assert.True(new Adult() is ICanBeScared);
         }
         [Fact]
-        public void LionCanSleep()
+        public void ChildImplementICanBeScared()
         {
-            Lion lion = new Lion();
-            Assert.Equal("Zzz...", lion.Sleep("", 1));
-        }
-        [Fact]
-        public void TurtleCanSleep()
-        {
-            Turtle turtle = new Turtle();
-            Assert.Equal("Zzz...", turtle.Sleep("", 1));
-        }
-        [Fact]
-        public void SnakeCanSleep()
-        {
-            Snake snake = new Snake();
-            Assert.Equal("Zzz...", snake.Sleep("", 1));
-        }
-        [Fact]
-        public void ElephantCanSleep()
-        {
-            Elephant elephant= new Elephant();
-            Assert.Equal("Zzz...", elephant.Sleep("", 1));
+            Assert.True(new Child() is ICanBeScared);
         }
     }
 }

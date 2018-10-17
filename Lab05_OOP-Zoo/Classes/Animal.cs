@@ -1,12 +1,26 @@
 ﻿using System;
+using Lab05_OOP_Zoo.Interfaces;
 
 namespace Lab05_OOP_Zoo.Classes
 {
     /// <summary>
     /// 
     /// </summary>
-    abstract public class Animal : Eatable
+    abstract public class Animal : Eatable, IScary
     {
+        abstract public int ScarcityLevel { get; set; }
+        public void Scare(ICanBeScared creature)
+        {
+            if (creature.FrightLevel < ScarcityLevel)
+            {
+                this.NameYourself();
+                Console.Write("I scared you!!! ");
+                creature.NameYourself();
+                creature.SeenSomethingScary();
+                Console.WriteLine();
+            }
+        }
+
         public virtual bool CanJump { get; set; } = true;
         /// <summary>
         /// 

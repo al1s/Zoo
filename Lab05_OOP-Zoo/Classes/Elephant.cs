@@ -21,22 +21,12 @@ namespace Lab05_OOP_Zoo.Classes
                 return string.Empty;
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="food"></param>
-        /// <returns>string</returns>
         public override int Move(int speed, int time)
         {
             Console.WriteLine("I'm slow!");
             double elephantVar = 0.7;
             return (int) Math.Round(speed * time * elephantVar);
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>string</returns>
         public override string Sound()
         {
             return "Pawoo!";

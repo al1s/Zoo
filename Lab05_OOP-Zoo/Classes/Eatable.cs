@@ -6,7 +6,7 @@ namespace Lab05_OOP_Zoo.Classes
     abstract public class Eatable
     {
         /// <summary>
-        /// 
+        /// Name of the eatable object
         /// </summary>
         public string Name
         {
@@ -17,7 +17,7 @@ namespace Lab05_OOP_Zoo.Classes
 
 
         /// <summary>
-        /// 
+        /// Weight of the eatable object
         /// </summary>
         public int Weight
         {
@@ -28,10 +28,14 @@ namespace Lab05_OOP_Zoo.Classes
 
 
         /// <summary>
-        /// 
+        /// Unique identifier for eatable object
         /// </summary>
         private long UID;
 
+        /// <summary>
+        /// Return Name of an object
+        /// </summary>
+        /// <returns>The name of the object</returns>
         public override string ToString()
         {
             return this.Name;

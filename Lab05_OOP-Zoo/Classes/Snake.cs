@@ -2,18 +2,10 @@ using System;
 
 namespace Lab05_OOP_Zoo.Classes
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class Snake : Carnivore
     {
         public override int ScarcityLevel { get; set; } = 8;
         public override bool CanJump { get => base.CanJump; set => base.CanJump = false; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="food"></param>
-        /// <returns>string</returns>
         public override string Eat(Animal food)
         {
             if (food is Turtle)
@@ -33,10 +25,6 @@ namespace Lab05_OOP_Zoo.Classes
             Console.WriteLine("I'm average");
             return avgSpeed * time;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>string</returns>
         public override string Sound()
         {
             return "Hsssss!";

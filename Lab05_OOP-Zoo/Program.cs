@@ -12,12 +12,12 @@ namespace Lab05_OOP_Zoo
             Turtle normalTurtle = new Turtle() { Name = "Turtle Bee" };
             Lion lion = new Lion() { Name = "Lion Lee" };
             Snake snake = new Snake() { Name = "Slithering One" };
-            Animal[] animals = new Animal[5];
-            animals[0] = bigMonkey;
-            animals[1] = smallElephant;
-            animals[2] = normalTurtle;
-            animals[3] = lion;
-            animals[4] = snake;
+            Animal[] zoo = new Animal[5];
+            zoo[0] = bigMonkey;
+            zoo[1] = smallElephant;
+            zoo[2] = normalTurtle;
+            zoo[3] = lion;
+            zoo[4] = snake;
 
             Visitor[] visitors = new Visitor[3];
             Adult adultBrave = new Adult() { Name = "Adult, brave one" };
@@ -28,12 +28,17 @@ namespace Lab05_OOP_Zoo
             visitors[1] = adultNotSoBrave;
             visitors[2] = child;
 
-            FeedAnimals(animals);
-            Yell(animals);
-            ScareAll(animals, visitors);
+            FeedAnimals(zoo);
+            SoundFrom(zoo);
+            ScareAll(visitors, zoo);
             Console.ReadLine();
         }
-        public static void ScareAll(Animal[] animals, Visitor[] visitors)
+        /// <summary>
+        /// Try to scare visitors with animals
+        /// </summary>
+        /// <param name="animals">Animals available</param>
+        /// <param name="visitors">Visitors available</param>
+        public static void ScareAll(Visitor[] visitors, Animal[] animals)
         {
             Random rnd = new Random();
             foreach (Animal animal in animals)
@@ -41,7 +46,11 @@ namespace Lab05_OOP_Zoo
                 animal.Scare(visitors[rnd.Next(0, 3)]);
             }
         }
-        public static void Yell(Animal[] animals)
+        /// <summary>
+        /// Get a sound for each animals
+        /// </summary>
+        /// <param name="animals">Animals we want to hear</param>
+        public static void SoundFrom(Animal[] animals)
         {
             foreach (Animal animal in animals)
             {
@@ -49,6 +58,10 @@ namespace Lab05_OOP_Zoo
                 Console.WriteLine(animal.Sound());
             }
         }
+        /// <summary>
+        /// Feed all animals
+        /// </summary>
+        /// <param name="animals">Animals to feed</param>
         public static void FeedAnimals(Animal[] animals)
         {
             int numberOfFoodEntities = 2;

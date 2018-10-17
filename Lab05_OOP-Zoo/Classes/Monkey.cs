@@ -3,17 +3,9 @@ using System;
 
 namespace Lab05_OOP_Zoo.Classes
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class Monkey : Herbivore
     {
         public override int ScarcityLevel { get; set; } = 1;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="food"></param>
-        /// <returns>string</returns>
         public override string Eat(Plant food)
         {
             if (food is Banana)
@@ -34,10 +26,6 @@ namespace Lab05_OOP_Zoo.Classes
             double monkeyVar = 1.3;
             return (int)Math.Round(avgSpeed * time * monkeyVar); 
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>string</returns>
         public override string Sound()
         {
             return "Meow...";
